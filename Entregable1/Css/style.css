@@ -1,0 +1,28 @@
+body {
+    background: -webkit-linear-gradient(left, #018989, #569834); 
+    background: -o-linear-gradient(right, #018989, #569834); 
+    background: -moz-linear-gradient(right, #018989, #569834); 
+    background: linear-gradient(to right, #018989, #569834); 
+    background-color: #018989;
+}
+
+.panel{
+    background: -webkit-linear-gradient(left, #606060, #3D3A3A); 
+    background: -o-linear-gradient(right, #606060, #3D3A3A); 
+    background: -moz-linear-gradient(right, #606060, #3D3A3A); 
+    background: linear-gradient(to right, #606060, #3D3A3A); 
+    background-color: #606060;
+    background-color: #606060;
+
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+}
+
+.dropmenu{
+    background: -webkit-linear-gradient(top, #7FFFD4, #24F273); 
+    background: -o-linear-gradient(bottom, #7FFFD4, #24F273); 
+    background: -moz-linear-gradient(bottom, #7FFFD4, #24F273); 
+    background: linear-gradient(to bottom, #7FFFD4, #24F273); 
+    background-color: #7FFFD4;
+}
+

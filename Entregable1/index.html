@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>Paint Interfaces Tp1</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="pt-2 my-1 panel text-white border border-white row">
+            <div class="col">
+                <div class="badge badge-success text-wrap" style="width: 3rem;"> Tools </div>
+                <i class="fas fa-pencil-alt fa-2x ml-2 mr-3" id="pencil"></i>
+                <i class="fas fa-window-minimize mx-2" id="subSizePencil"></i>
+                <i class="fas fa-plus mr-4" id="addSizePencil"></i>
+                <i class="fas fa-eraser fa-2x ml-2 mr-3" id="eraser"></i>
+                <div class="badge badge-success text-wrap ml-3 mr-3" style="width: 3rem;"> Palette </div>
+                <input class="btn btn-light mb-2" type="color" id="palet" value="#018989"/>
+                <div class="badge badge-success text-wrap ml-4" style="width: 3rem;"> Scale</div>
+                <input type="range" class="ml-3" style="width: 8rem; height: 1rem;" id="zoom" value="35">
+            </div>
+
+            <div class="col-1">
+                
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn dropmenu dropdown-toggle pt-1"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <label class="font-weight-bold mr-2" style="width: 3rem; height: 0.8rem;">Filters</label>
+                    </button>
+                    <div class="dropdown-menu dropmenu dropright">
+                        <button class="dropdown-item" id="filterNegativo" href="#">Negativo</button>
+                        <button class="dropdown-item" id="filterBinarizacion" href="#">Binarizacion</button>
+                        <button class="dropdown-item" id="filterSepia" href="#">Sepia</button>
+                        <button class="dropdown-item" id="filterLineas" href="#">Lineas</button>
+                        <button class="dropdown-item" id="filterBrillo" href="#">Brillo</button>
+                        <button class="dropdown-item" id="filterEnfoque" href="#">Enfocar</button>
+                        <button class="dropdown-item" id="filterRepujado" href="#">Repujado</button>
+                        <button class="dropdown-item" id="filterBlur" href="#">Blur</button>
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                            <label class="pr-4" style="width: 3rem; height: 1rem; width: 10rem;">Detectar Bordes</label>
+                            </button>
+                            <div class="dropdown-menu dropmenu">
+                                <button class="dropdown-item" id="filterBordes" href="#">Detectar Bordes</button>
+                                <button class="dropdown-item" id="filterBordes2" href="#">Detectar Bordes 2.0</button>
+                                <button class="dropdown-item" id="filterBordes3" href="#">Detectar Bordes 3.0</button>
+                                <button class="dropdown-item" id="filterBordes4" href="#">Detectar Bordes 4.0</button>
+                                <button class="dropdown-item" id="filterBordes5" href="#">Detectar Bordes 5.0</button>
+                                <button class="dropdown-item" id="filterBordes6" href="#">Detectar Bordes 6.0</button>
+                                <button class="dropdown-item" id="filterBordes7" href="#">Detectar Bordes 7.0</button>
+                                <button class="dropdown-item" id="filterBordes8" href="#">Detectar Bordes 8.0</button>
+                            </div>
+                      </div>
+                </div>
+            </div>
+            
+            <div class="col-5 justify-content-end">
+                <div class="badge badge-success text-wrap ml-5 mr-2" style="width: 3rem;"> undo </div>
+                <i class="fas fa-undo fa-2x mr-4" id="undo"></i>
+                <div class="badge badge-success text-wrap mr-2 ml-2" style="width: 3rem;"> Open Image </div>
+                <i class="fas fa-folder-plus fa-2x mr-4" id="addimage"></i>
+                <input id="inputfile" type="file" accept="image/*" style="display: none;">
+                <div class="badge badge-success text-wrap ml-2 mr-2" style="width: 3rem;"> Save </div>
+                <i class="fas fa-save fa-2x mr-4" id="save"></i>
+                <div class="badge badge-success text-wrap ml-2 mr-1" style="width: 3rem;"> Delete </div>
+                <i class="far fa-trash-alt fa-2x"  id="delete"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="bg-white">
+            <canvas id="mycanvas" width="1336" height="608"> Su navegador no es compatible con canvas :'( </canvas>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+<script src="./JavaScript/script.js"></script>
+
+</html>
