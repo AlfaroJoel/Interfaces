@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <title>Dragon Ball Super - Estreno</title>
+    <title>Dragon Ball Super</title>
 </head>
 <body>
     
+    <div class="containerDiv" id="container">
+        <div class="spinner" id="spin">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <nav class="nav">
-        <div class="logo"></div>
+        <button class="menu">
+            <div class="desplegable">
+                <a href="index.html" class="links">Inicio</a>
+                <a href="calendario.html" class="links">Eventos</a>
+                <a href="comentarios.html" class="links">Comentarios</a>
+            </div>
+        </button>
         <a href="#">INICIO</a>
         <a href="#">SINOPSIS</a>
         <a href="#">PERSONAJES</a>
@@ -38,7 +57,6 @@
     
     <section class="hero">
         <div></div>
-        <div></div>
         <div class="estreno">
             <label class="fechad"> 9 DIAS </label>
             <label class="fechahr"> 13:43:24 </label>
@@ -46,27 +64,109 @@
     </section>
     
     <section class="sinopsis">
+        <h1>Sinopsis</h1>
         <div>
-            Tras el Torneo de Poder, un saiyan al que nunca antes han visto se presenta ante Goku y Vegeta.
-            Esta es la historia de Broly, un saiyan sin límites…
+            La paz ha regresado una vez más a la Tierra después del Torneo de Poder. 
+            Tras descubrir que en los diferentes universos hay seres increíblemente poderosos que aún no ha visto,
+            Goku tiene intención de seguir entrenando para hacerse aún más fuerte. 
+            Entonces, un día, un saiyan llamado Broly al que nunca antes han visto se presenta ante Goku y Vegeta.
+            Pero se suponía que los saiyans habían quedado prácticamente extinguidos en la destrucción del Planeta Vegeta,
+            así que, ¿qué está haciendo este en la Tierra? Incluso Freeza, de vuelta del infierno, 
+            se ve involucrado en este encuentro entre tres saiyans que han seguido destinos completamente diferentes y
+            que no tarda en convertirse en una feroz batalla contra un guerrero que no parece tener límites.
         </div>
     </section>
 
+    <div class="title">Personajes</div>
     <section class="personajes">
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
+        <div class="cards">
+            <div class="lado"></div>
+            <div class="lado detras">
+                <div class="titleCard">Son Goku</div>
+                <div class="descripCard">
+                    Un saiyan criado en la Tierra y que la ha protegido de numerosos enemigos.<br>
+                    <br>
+                    Le encanta luchar y, cuanto más fuerte es el oponente, mayor es su entusiasmo.<br>
+                    <br>
+                    Su nombre saiyan es Kakarot. <br>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="lado"></div>
+            <div class="lado detras">
+                <div class="titleCard">Vegeta</div>
+                <div class="descripCard">
+                    Un orgulloso príncipe saiyan que comparte una intensa rivalidad con Goku. <br>
+                    <br>
+                    Se entrena para vencer a Goku, pero se siente amenazado por Freeza
+                     tras ser resucitado después del Torneo de Poder. <br>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="lado"></div>
+            <div class="lado detras">
+                <div class="titleCard">Broly</div>
+                <div class="descripCard">
+                    Uno de los pocos supervivientes que quedan de la raza de los saiyans. <br>
+                    <br>
+                    Un saiyan al que Goku y Vegeta nunca habían visto. <br>
+                    <br>
+                    ¿Qué motivo tiene para ir a la Tierra?
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="lado"></div>
+            <div class="lado detras">
+                <div class="titleCard">Bardock</div>
+                <div class="descripCard">
+                    Un guerrero saiyan que vive en el Planeta Vegeta. <br>
+                    <br>
+                    El único saiyan que tuvo conocimiento de los planes de Freeza. <br>
+                    <br>
+                    Padre biológico de Son Goku (Kakarot).
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="lado"></div>
+            <div class="lado detras">
+                <div class="titleCard">Gine</div>
+                <div class="descripCard">
+                    Saiyan que habita en el Planeta Vegeta. <br>
+                    <br>
+                    Su carácter dulce es la excepción entre los saiyans. <br>
+                    <br>
+                    Madre biológica de Son Goku (Kakarot).
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="lado"></div>
+            <div class="lado detras">
+                <div class="titleCard">Paragus</div>
+                <div class="descripCard">
+                    Uno de los pocos supervivientes que quedan de la raza de los saiyans y padre de Broly. <br>
+                    <br>
+                    Oculta algo en un artilugio que lleva en el cinturón. <br>
+                    <br>
+                    ¿Qué motivo tiene para ir a la Tierra junto a Broly?
+                </div>
+            </div>
+        </div>
     </section>
     
+    <div class="title">Galeria</div>
     <section class="galeria">
         <a class="atras"><i class="fas fa-angle-left fa-5x"></i></a>
         <div class="imageG"></div>
         <a class="siguiente"><i class="fas fa-angle-right fa-5x siguiente"></i></a>
     </section>
     
-    <script src="./script.js"></script>
+    <script src="./js/spinner.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let nav = document.querySelector(".nav");
+    let estreno = document.querySelector(".estreno");
+    let personajes = document.querySelector(".personajes");
     let fechaD = document.querySelector(".fechad");
     let fechaHr = document.querySelector(".fechahr");
     let sig = document.querySelector(".siguiente");
@@ -11,21 +12,24 @@ document.addEventListener('DOMContentLoaded', function () {
     fechaEstreno();
     setInterval(fechaEstreno, 1000);
 
+
+
     window.onscroll = function(){
         let y = window.scrollY;
-        if(y > 300){
-            nav.style.height = 38 + "px";
-            nav.style.paddingTop = 13 + "px";
-            nav.style.fontSize = 17 + "px";
-        }else if(y < 300){
-            nav.style.height = 45 + "px";
-            nav.style.paddingTop = 18 + "px";
-            nav.style.fontSize = 20 + "px";
+        if(y < 210){
+            estreno.style.top = 300 + y + "px";
+        }
+        if(y > 1070){
+            personajes.style.animation = "opacityCards 1s linear";
+            personajes.style.opacity = 1;
+        }else if(y < 880){
+            personajes.style.animation = "";
+            personajes.style.opacity = 0;
         }
     }
 
     function fechaEstreno(){
-        let estreno = new Date(2020, 9, 30, 20, 16, 0);
+        let estreno = new Date(2020, 10, 10, 20, 30, 0);
         let hoy = new Date();
         let dif = estreno - hoy;
         let dias = Math.floor(dif / (1000 * 60 * 60 * 24));

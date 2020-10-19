@@ -1,10 +1,11 @@
 body{
     margin: 0;
     padding: 0;
-    height: 550vh;
+    height: 640vh;
     background-image: url("./Images/background.jpg");
     background-attachment: fixed;
     z-index: 0;
+    overflow: hidden;
 }
 
 a{
@@ -12,22 +13,58 @@ a{
     color: white;
 }
 
+label{color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.containerDiv{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 4;
+    animation: opacitySpinner 1s 2.5s linear;
+}
+
+.spinner{
+    display: inline-block;
+    position: absolute;
+    top: 40vh;
+    left: 620px;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    z-index: 4;
+}
+
+.spinner div{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #FFF;
+    animation: scaleOpacity 1s linear infinite;
+}
+
 .nav{
     
     display: inline-block;
     width: 100%;
-    padding-left: 180px;
+    padding-left: 140px;
     height: 45px; /*38, 13, 17*/
     padding-top: 18px;
     font-size: 20px;
     position: fixed;
     background-color: rgba(0,0,0, 0.90);
     z-index: 3;
+    transition: all 0.5s;
 }
 
 .nav a{
     position: relative;
-    margin-left: 25px;
+    margin-left: 15px;
     font-weight: 800;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -39,23 +76,59 @@ a{
     animation: animhov 0.7s alternate infinite linear;
 }
 
-.logo{
+button{
+    background-color: transparent;
+    border-radius: 10px;
+    border-style: none;
+    outline:none;
+}
+
+.menu{
     display: inline-block;
+    text-decoration: none;
     position: absolute;
-    left: 60px;
-    top: 0;
-    width: 122px;
-    height: 55px;
-    background-image: url("./Images/logo123x56.png");
+    left: 50px;
+    top: 7px;
+    width: 52px;
+    height: 45px;
+    background-image: url("./Images/menu.png");
     z-index: 3;
+    transition: all 0.5s;
+}
+
+.desplegable{
+    position: absolute;
+    overflow: hidden;
+    top: 40px;
+    left: 9px;
+    width: 0px;
+    height: 0px;
+    transition: all 0.8s;
+}
+
+.menu:focus .desplegable{
+    width: 200px;
+    height: 300px;
+    background-color: black;
+}
+
+.links{
+    display: inline;
+    line-height: 180%;
+    font-size: 30px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .hero{
+    background-attachment: fixed;
     position: absolute;
     top: 52px;
     width: 100%;
     height: 615px;
     background-image: url("./Images/gokuvegetabroly2.png");
+    background-position: 0px 40px;
     z-index: 2;
 }
 
@@ -79,10 +152,12 @@ a{
 
 
 .hero div:nth-child(1){
+    background-attachment: fixed;
+    background-position: 0px 68px;
     top: 20px;
     left: 0px; /* 680 */
     width: 646px;
-    height: 295px;
+    height: 475px;
     background-image: url("./Images/logo.png");
     background-repeat: no-repeat;
     animation: scale 0.3s linear;
@@ -92,26 +167,135 @@ a{
     position: absolute;
     top: 100vh;
     width: 100%;
-    height: 130vh;
-    background-color: rgba(20,20,24, 0.45);
+    height: 110vh;
+    background: rgba(20,20,24, 0.45);
+    color: white;
+    line-height: 130%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 38px;
     z-index: 2;
 }
 
 .personajes{
-    position: absolute;
-    top: 230vh;
+    position: relative;
+    opacity: 0;
+    overflow: hidden;
+    top: 210vh;
     display: inline-block;
     width: 100%;
-    height: 100vh;
+    height: 155vh;
     z-index: 2;
+    -webkit-perspective: 1300;
+}
+
+.form{
+    position: absolute;
+    top: 200px;
+    left: 380px;
+    width: 600px;
+    height: 380px;
+    background-color: rgba(0,0,0, 0.70);
+}
+
+.title{
+    position: relative;
+    text-align: center;
+    top: 214vh;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-size: 58px;
+    z-index: 2;
+
 }
 .cards{
     position: absolute;
-    width: 390px;
-    height: 320px;
+    border: 6px solid  rgba(20,20,24, 0.45);
+    width: 272px;
+    height: 399px;
+    background: rgba(0, 0, 0, 0.6);
     transform-style: preserve-3d;
-    background: rgba(0, 0, 0, 0.4);
+    transition: 1.2s;
+}
 
+.cards:hover{
+    transform: rotateY(180deg);
+}
+
+.lado{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.detras{
+    background-color: rgba(0, 0, 0, 1);
+    transform: rotateY(180deg);
+}
+
+.titleCard{
+    text-align: center;
+    font-weight: 800;
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: rgba(0,228,250, 0.63);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.descripCard{
+    text-align: left;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 130%;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.galeria{
+    position: absolute;
+    top: 378vh;
+    width: 100%;
+    height: 140vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-position: center;
+    background-image: url("./Images/galeria3.jpg");
+    background-repeat: no-repeat;
+    transition-property: background-image;
+    transition-duration: 0.7s;
+}
+
+.containerCal{
+    position: absolute;
+    width: 300px;
+}
+
+.titlepag{
+    position: relative;
+    text-align: center;
+    top: 80px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-size: 58px;
+    z-index: 2;
+
+}
+
+.galeria a{
+    cursor: pointer;
+}
+
+.atras{
+    position: absolute;
+    top: 45%;
+    left: 2%;
+
+}
+
+.siguiente{
+    position: absolute;
+    top: 45%;
+    left: 95%;
 }
 
 .estrellas{
@@ -119,6 +303,7 @@ a{
     position: fixed;
     z-index: -1;
 }
+
 
 .estrellas div{
     position: absolute;
@@ -149,32 +334,15 @@ a{
     animation: estrellaFugaz 10s linear infinite;
 }
 
-.galeria{
-    position: absolute;
-    top: 360vh;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    background-position: center;
-    background-image: url("./Images/galeria3.jpg");
-    background-repeat: no-repeat;
-}
-
-.galeria a{
-    cursor: pointer;
-}
-
-.atras{
-    position: absolute;
-    top: 45%;
-    left: 2%;
-
-}
-
-.siguiente{
-    position: absolute;
-    top: 45%;
-    left: 95%;
+@keyframes scaleOpacity{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0.2);
+        opacity: 0;
+    }
 }
 
 @keyframes scale{
@@ -200,6 +368,23 @@ a{
     }
     100%{
         opacity: 0;
+    }
+}
+
+@keyframes opacitySpinner{
+    from{
+        background-color: rgba(0, 0, 0, 1);
+    }
+    to{
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes opacityCards{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
     }
 }
 
@@ -241,30 +426,87 @@ a{
     }
 }
 
+.spinner div:nth-child(1){
+    top: 19px;
+    left:  41px;
+    animation-delay: 0s;
+}
+.spinner div:nth-child(2){
+    top: 25px;
+    left:  26px;
+    animation-delay: 0.125s;
+}
+.spinner div:nth-child(3){
+    top: 40px;
+    left:  19px;
+    animation-delay: 0.25s;
+}
+.spinner div:nth-child(4){
+    top: 55px;
+    left:  26px;
+    animation-delay: 0.375s;
+}
+.spinner div:nth-child(5){
+    top: 61px;
+    left:  41px;
+    animation-delay: 0.5s;
+}
+.spinner div:nth-child(6){
+    top: 55px;
+    left:  56px;
+    animation-delay: 0.625s;
+}
+.spinner div:nth-child(7){
+    top: 40px;
+    left:  63px;
+    animation-delay: 0.75s;
+}
+.spinner div:nth-child(8){
+    top: 25px;
+    left:  56px;
+    animation-delay: 0.875s;
+}
 
-.personajes .cards:nth-child(1){
+.cards:nth-child(1){
+    background-repeat: no-repeat;
     top: 70px;
-    left: 50px;
+    left: 100px;
+    background-image: url("./Images/gokuCard.png");
 }
-.personajes .cards:nth-child(2){
+.cards:nth-child(2){
     top: 70px;
-    left: 480px;
+    left: 530px;
+    background-position: 0px -6px;
+    background-image: url("./Images/vegetaCard.png");
+    background-repeat: no-repeat;
 }
-.personajes .cards:nth-child(3){
+.cards:nth-child(3){
     top: 70px;
-    left: 910px;
+    left: 960px;
+    background-repeat: no-repeat;
+    background-position: 0px 22px;
+    background-image: url("./Images/brolyCard.png");
 }
-.personajes .cards:nth-child(4){
-    top: 460px;
-    left: 50px;
+.cards:nth-child(4){
+    top: 550px;
+    left: 100px;
+    background-repeat: no-repeat;
+    background-position: 60px 0px;
+    background-image: url("./Images/bardockCard.png");
 }
-.personajes .cards:nth-child(5){
-    top: 460px;
-    left: 480px;
+.cards:nth-child(5){
+    top: 550px;
+    left: 530px;
+    background-repeat: no-repeat;
+    background-position: 60px -4px;
+    background-image: url("./Images/gineCard.png");
 }
-.personajes .cards:nth-child(6){
-    top: 460px;
-    left: 910px;
+.cards:nth-child(6){
+    top: 550px;
+    left: 960px;
+    background-repeat: no-repeat;
+    background-position: 40px 0px;
+    background-image: url("./Images/paragusCard.png");
 }
 
 .estrellas div:nth-child(1){
@@ -332,66 +574,3 @@ a{
     opacity: 0;
     animation-delay: 0s;
 }
-
-
-/* @keyframes layer4{
-    0%{
-        background-position-y: 0;
-    }
-    100%{
-        background-position-y: -30px;
-    }
-}
-
-@keyframes moveGoku{
-    0%{
-        left: 15%;
-    }
-    100%{
-        left: 20%;
-    }
-}
-
-@keyframes moveBroly{
-    0%{
-        left: 70%;
-    }
-    100%{
-        left: 65%;
-    }
-}
-
-.layer{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-}
-
-.layer-1{
-    background-image: url("./Images/PrimerPlano2.png");
-    background-attachment: fixed;
-}
-
-.layer-2{
-    
-    background-image: url("./Images/gokuDef2.png");
-    width: 348px;
-    height: 525px;
-    transform: scale(0.5);
-    left: 220px;
-}
-.layer-3{
-    background-image: url("./Images/brolyDef.png");
-    width: 348px;
-    height: 525px;
-    transform: scale(0.5);
-    left: 870px;
-}
-
-.layer-4{
-    background-image: url("./Images/TercerPlano3.png");
-    background-attachment: fixed;
-} */
