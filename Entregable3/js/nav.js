@@ -19,10 +19,5 @@ document.addEventListener('DOMContentLoaded', function () {
             nav.style.paddingTop = "18px";
             nav.style.fontSize = "20px";
         }
-
-
-        if(y < 210){
-            estreno.style.top = 300 + y + "px";
-        }
     }
 });

@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let sig = document.querySelector(".siguiente");
     let atras = document.querySelector(".atras");
     let galeria = document.querySelector(".galeria");
+    let menu = document.querySelector(".menu");
+    let nav = document.querySelector(".nav");
     let totalImgs = 4;
     let imgactual = 1;
 
@@ -25,6 +27,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }else if(y < 880){
             personajes.style.animation = "";
             personajes.style.opacity = 0;
+        }
+
+        if(y > 300){
+            menu.style.transform = "scale(0.7)";
+            menu.style.top = "0";
+            nav.style.height = "35px";
+            nav.style.paddingTop = "13px";
+            nav.style.fontSize = "17px";
+        }else if(y < 300){
+            menu.style.transform = "scale(1)"; 
+            menu.style.top = "7px";
+            nav.style.height = "45px";
+            nav.style.paddingTop = "18px";
+            nav.style.fontSize = "20px";
         }
     }
 
