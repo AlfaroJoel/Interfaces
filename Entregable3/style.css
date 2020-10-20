@@ -217,6 +217,7 @@ textarea{
     -webkit-perspective: 1300;
 }
 
+
 .form{
     display: inline-block;
     position: absolute;
@@ -381,25 +382,6 @@ textarea{
     background-color: transparent;
 }
 
-.containerCal{
-    padding-left: 5px;
-    padding-right: 15px;
-    overflow: scroll;
-    color: white;
-    font-size: 22px;
-    border-radius: 15px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: absolute;
-    top: 170px;
-    left: 280px;
-    width: 830px;
-    height: 460px;
-    background-color: rgba(0,0,0, 0.70);
-    transition: all 2s;
-}
-
-
-
 .titlepag{
     position: relative;
     text-align: center;
@@ -464,8 +446,28 @@ textarea{
     animation: estrellaFugaz 10s linear infinite;
 }
 
+.containerCal{
+    padding-left: 5px;
+    padding-right: 15px;
+    overflow: scroll;
+    color: white;
+    font-size: 22px;
+    border-radius: 15px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    top: 170px;
+    left: 280px;
+    width: 830px;
+    height: 460px;
+    background-color: rgba(0,0,0, 0.70);
+    transition: all 2s;
+}
+
+
+
 
 details{
+    position: relative;
     border: 1px solid white;
     border-radius: 10px;
     width: 100%;
@@ -476,6 +478,7 @@ details{
     max-height: 30px;
     transition: all 0.7s linear;
     padding-left: 5px;
+    -webkit-perspective: 1300;
 }
 
 .comments{
@@ -494,10 +497,18 @@ details img{
     margin-right: 10px;
     margin-bottom: 10px;
     width: 100px;
+    transform-style: preserve-3d;
+    transition: all 1.2s;
+}
+
+details img:hover{
+    transform: rotateY(180deg);
 }
 
 .expand{
     margin-left: 15px;
+    line-height: 130%;
+    float: right;
 }
 
 details[open]{
